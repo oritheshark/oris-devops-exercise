@@ -1,0 +1,14 @@
+---
+- name: Copy imgpanda app
+  copy: src=imgpanda-app dest=/panda owner=root group=root mode=0755
+
+- name: Pip install requirements
+  shell: cd /panda/imgpanda-app/; pip install -r requirements.txt
+
+- name: Install upstart service
+  copy: src=upstart/imgpanda.conf dest=/etc/init/ owner=root group=root mode=0644
+
+- service:
+    name: imgpanda
+    state: started
+    enabled: yes

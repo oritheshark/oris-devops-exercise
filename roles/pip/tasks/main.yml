@@ -1,0 +1,6 @@
+---
+- name: Apt install dependencies
+  become: yes
+  apt: pkg={{item}} state=installed
+  with_items:
+    - python-pip

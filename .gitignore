@@ -1,1 +1,4 @@
-.vagrant
+panda
+vagrant
+playbook.retry
+inventory

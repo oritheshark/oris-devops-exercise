@@ -1,0 +1,14 @@
+---
+- name: copy smartpanda app
+  copy: src=smartpanda-app dest=/panda/ owner=root group=root mode=0755
+
+- name: npm install
+  npm: path=/panda/smartpanda-app
+
+- name: Install upstart service
+  copy: src=upstart/smartpanda.conf dest=/etc/init/ owner=root group=root mode=0644
+
+- service:
+    name: smartpanda
+    state: started
+    enabled: yes

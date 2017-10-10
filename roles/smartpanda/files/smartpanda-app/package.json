@@ -1,0 +1,10 @@
+{
+  "name": "smartpanda_app",
+  "version": "1.0.0",
+  "description": "super panda application",
+  "main": "smartpanda.js",
+  "dependencies": {
+    "httpdispatcher": "^2.0.0",
+    "mongodb" : ""
+  }
+}
